@@ -18,14 +18,27 @@ class NextDayCalculatorTest {
     }
 
     @Test
-    @DisplayName("case 1/31/2024")
-    void testGetNextDayCaseD1M31Y2024() {
+    @DisplayName("case 31/1/2024")
+    void testGetNextDayCaseD31M1Y2024() {
         NextDayCalculator nextDay = new NextDayCalculator();
         int day = 31;
         int month = 1;
         int year = 2024;
 
         String result = "1/2/2024";
+        String a = nextDay.getNextDay(day, month, year);
+        assertEquals(result,a);
+    }
+
+    @Test
+    @DisplayName("case 30/4/2024")
+    void testGetNextDayCaseD30M4Y2024() {
+        NextDayCalculator nextDay = new NextDayCalculator();
+        int day = 30;
+        int month = 4;
+        int year = 2024;
+
+        String result = "1/5/2024";
         String a = nextDay.getNextDay(day, month, year);
         assertEquals(result,a);
     }
