@@ -3,8 +3,15 @@ public class NextDayCalculator {
     public static final String CONCATSTRING = "/";
 
     public String getNextDay (int day, int month, int year) {
-        int nextDay = ++day;
-        return nextDay + CONCATSTRING + month + CONCATSTRING + year;
+        String result = "";
+        if (day < getDaysOfMonth(month, year)) {
+            int nextDay = ++day;
+            result = nextDay + CONCATSTRING + month + CONCATSTRING + year;
+        } else if (day == getDaysOfMonth(month, year)) {
+            int nextMonth = ++month;
+            result = 1 + CONCATSTRING + nextMonth + CONCATSTRING + year;
+        }
+        return result;
     }
 
     public int getDaysOfMonth (int month, int year) {
