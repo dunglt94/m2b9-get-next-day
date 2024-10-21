@@ -42,5 +42,19 @@ class NextDayCalculatorTest {
         String a = nextDay.getNextDay(day, month, year);
         assertEquals(result,a);
     }
+    @Test
+    @DisplayName("case 29/2/2024")
+    void testGetNextDayCaseD29M2Y2024() {
+        NextDayCalculator nextDay = new NextDayCalculator();
+        int day = 29;
+        int month = 2;
+        int year = 2024;
+
+        String result = "1/3/2024";
+        String a = nextDay.getNextDay(day, month, year);
+        assertEquals(result,a);
+    }
+
+
 }
 
